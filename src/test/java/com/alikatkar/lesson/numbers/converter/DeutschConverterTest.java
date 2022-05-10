@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DeutschConverterTest {
 
-    private final DeutscheConverter deutschConverter = new DeutscheConverter();
+    private final DeutschConverter deutschConverter = new DeutschConverter();
 
     @ParameterizedTest
     @CsvFileSource(resources = "/DeutschValues.csv")

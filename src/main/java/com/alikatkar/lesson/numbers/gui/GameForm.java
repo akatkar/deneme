@@ -30,7 +30,7 @@ public class GameForm extends JFrame implements ActionListener {
 
         // put the controls the content pane
         Container c = f.getContentPane( );
-        gamePanel = new GamePanel(null);
+        gamePanel = new GamePanel();
         toolbar = new Toolbar(this);
         c.add(toolbar, BorderLayout.NORTH);
         c.add(gamePanel, BorderLayout.CENTER);

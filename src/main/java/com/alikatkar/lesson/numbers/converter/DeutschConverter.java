@@ -3,7 +3,7 @@ package com.alikatkar.lesson.numbers.converter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class DeutscheConverter implements NumbersToText {
+public class DeutschConverter implements NumbersToText {
     private static final String ZERO = "null";
     private static final String ONE = "eins";
     private static final String[] ONES =

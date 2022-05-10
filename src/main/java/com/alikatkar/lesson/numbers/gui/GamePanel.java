@@ -7,7 +7,6 @@ import com.alikatkar.lesson.numbers.generator.SequentialGenerator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class GamePanel extends JPanel {
 
@@ -21,8 +20,7 @@ public class GamePanel extends JPanel {
 
     private transient NumberToTextConverter converter = NumberToTextConverter.of("tr");
 
-    public GamePanel(ActionListener actionListener){
-        this.actionListener = actionListener;
+    public GamePanel(){
         this.initComponents();
         this.updateGenerator();
     }
@@ -70,5 +68,4 @@ public class GamePanel extends JPanel {
         numberLabel.setText(String.valueOf(currentNumber));
         textLabel.setText(converter.toText(currentNumber));
     }
-
 }
