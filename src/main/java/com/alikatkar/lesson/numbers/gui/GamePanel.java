@@ -2,8 +2,6 @@ package com.alikatkar.lesson.numbers.gui;
 
 import com.alikatkar.lesson.numbers.converter.NumberToTextConverter;
 import com.alikatkar.lesson.numbers.generator.NumberGenerator;
-import com.alikatkar.lesson.numbers.generator.RandomGenerator;
-import com.alikatkar.lesson.numbers.generator.SequentialGenerator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,9 +56,7 @@ public class GamePanel extends JPanel {
     }
 
     private void updateGenerator() {
-        numberGenerator = "Random".equals(generatorType)
-                ? new RandomGenerator(startNumber, stopNumber)
-                : new SequentialGenerator(startNumber, stopNumber);
+        numberGenerator = NumberGenerator.of(generatorType, startNumber, stopNumber);
         nextNumber();
     }
 

@@ -1,6 +1,6 @@
 package com.alikatkar.lesson.numbers.generator;
 
-public class SequentialGenerator implements NumberGenerator {
+class SequentialGenerator implements NumberGenerator {
     private final long start;
     private final long stop;
     private long current;

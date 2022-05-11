@@ -2,7 +2,7 @@ package com.alikatkar.lesson.numbers.generator;
 
 import java.util.Random;
 
-public class RandomGenerator implements NumberGenerator {
+class RandomGenerator implements NumberGenerator {
     private final Random random = new Random();
     private final long start;
     private final long stop;
