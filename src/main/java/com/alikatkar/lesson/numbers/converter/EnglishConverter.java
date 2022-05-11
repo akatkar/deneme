@@ -3,7 +3,7 @@ package com.alikatkar.lesson.numbers.converter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class EnglishConverter implements NumbersToText {
+class EnglishConverter implements NumberToTextConverter {
     private static final String ZERO = "zero";
     private static final String[] ONES =
             {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",

@@ -3,7 +3,7 @@ package com.alikatkar.lesson.numbers.converter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class TurkishConverter implements NumbersToText {
+class TurkishConverter implements NumberToTextConverter {
     private static final String ZERO = "sıfır";
     private static final String[] ONES =
             {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
