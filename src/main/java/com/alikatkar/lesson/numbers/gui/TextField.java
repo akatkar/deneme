@@ -7,5 +7,6 @@ public class TextField extends JLabel {
     public TextField() {
         this.setHorizontalAlignment(SwingConstants.CENTER);
         this.setFont(new Font("Consolas", Font.PLAIN, 40));
+        this.setBorder(BorderFactory.createRaisedSoftBevelBorder());
     }
 }

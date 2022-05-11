@@ -29,6 +29,7 @@ public class GameForm extends JFrame implements ActionListener {
         panel.setLayout(new BorderLayout());
 
         toolbar = new Toolbar(this);
+        toolbar.setBorder(BorderFactory.createRaisedSoftBevelBorder());
         panel.add(toolbar, BorderLayout.NORTH);
         gamePanel = new GamePanel();
         panel.add(gamePanel, BorderLayout.CENTER);
