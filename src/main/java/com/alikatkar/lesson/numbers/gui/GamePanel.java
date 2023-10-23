@@ -1,6 +1,8 @@
 package com.alikatkar.lesson.numbers.gui;
 
+import com.alikatkar.lesson.numbers.converter.Language;
 import com.alikatkar.lesson.numbers.converter.NumberToTextConverter;
+import com.alikatkar.lesson.numbers.generator.GeneratorType;
 import com.alikatkar.lesson.numbers.generator.NumberGenerator;
 
 import javax.swing.*;
@@ -10,13 +12,13 @@ public class GamePanel extends JPanel {
 
     private final TextField numberLabel = new TextField();
     private final TextField textLabel = new TextField();
-    private String generatorType = "Random";
+    private GeneratorType generatorType = GeneratorType.RANDOM;
     private long currentNumber;
     private long startNumber = 0;
     private long stopNumber = 100;
     private transient NumberGenerator numberGenerator;
 
-    private transient NumberToTextConverter converter = NumberToTextConverter.of("tr");
+    private transient NumberToTextConverter converter = NumberToTextConverter.of(Language.TR);
 
     public GamePanel(){
         this.initComponents();
@@ -39,12 +41,12 @@ public class GamePanel extends JPanel {
         updateScreen();
     }
 
-    public void setConverter(String language) {
+    public void setConverter(Language language) {
         converter = NumberToTextConverter.of(language);
         updateScreen();
     }
 
-    public void setGenerator(String type) {
+    public void setGenerator(GeneratorType type) {
         generatorType = type;
         updateGenerator();
     }

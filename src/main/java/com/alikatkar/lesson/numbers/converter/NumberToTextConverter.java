@@ -3,10 +3,10 @@ package com.alikatkar.lesson.numbers.converter;
 public interface NumberToTextConverter {
     String toText(long number);
 
-    static NumberToTextConverter of(String language) {
-        return switch (language.toLowerCase()) {
-            case "en" -> new EnglishConverter();
-            case "de" -> new DeutschConverter();
+    static NumberToTextConverter of(Language language) {
+        return switch (language) {
+            case EN -> new EnglishConverter();
+            case DE -> new DeutschConverter();
             default -> new TurkishConverter();
         };
     }

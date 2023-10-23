@@ -3,22 +3,23 @@ package com.alikatkar.lesson.numbers.gui;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
+import com.alikatkar.lesson.numbers.converter.Language;
+import com.alikatkar.lesson.numbers.generator.GeneratorType;
+
 public class Toolbar extends JToolBar {
 
-    private JTextField startNumber;
-    private JTextField stopNumber;
+    private final JTextField startNumber;
+    private final JTextField stopNumber;
 
     public Toolbar(ActionListener actionListener) {
         // create a combo box
-        String [] languages = { "TR", "EN", "DE" };
-        JComboBox<String> comboBox = new JComboBox<>(languages);
+        JComboBox<Language> comboBox = new JComboBox<>(Language.values());
         comboBox.setEditable(true);
         comboBox.addActionListener(actionListener);
         comboBox.setName("LanguageSelection");
         this.add(comboBox);
 
-        String [] items = { "Random", "Sequential"};
-        JComboBox<String> orders = new JComboBox<>(items);
+        JComboBox<GeneratorType> orders = new JComboBox<>(GeneratorType.values());
         orders.setEditable(true);
         orders.addActionListener(actionListener);
         orders.setName("OrderSelection");

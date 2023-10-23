@@ -5,7 +5,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import com.alikatkar.lesson.numbers.converter.Language;
+import com.alikatkar.lesson.numbers.generator.GeneratorType;
+
 public class GameForm extends JFrame implements ActionListener {
+
+    private static final String TITLE = "Numbers v1.0";
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 400;
+
+    private static final int X_LOCATION = 200;
+    private static final int Y_LOCATION = 200;
 
     private GamePanel gamePanel;
     private Toolbar toolbar;
@@ -15,10 +25,10 @@ public class GameForm extends JFrame implements ActionListener {
     }
 
     private GameForm() throws HeadlessException {
-        super("Numbers v1.0");
+        super(TITLE);
         initComponents();
-        setSize(800, 400);
-        setLocation(200, 200);
+        setSize(WIDTH, HEIGHT);
+        setLocation(X_LOCATION, Y_LOCATION);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
@@ -43,12 +53,12 @@ public class GameForm extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() instanceof JComboBox comboBox) {
+        if (e.getSource() instanceof JComboBox<?> comboBox) {
             if(comboBox.getName().equals("LanguageSelection")) {
-                String lang = (String) comboBox.getSelectedItem();
+                Language lang = (Language) comboBox.getSelectedItem();
                 gamePanel.setConverter(lang);
             } else if (comboBox.getName().equals("OrderSelection")) {
-                String type = (String) comboBox.getSelectedItem();
+                GeneratorType type = (GeneratorType) comboBox.getSelectedItem();
                 gamePanel.setGenerator(type);
             }
         } else if (e.getSource() instanceof JButton) {
